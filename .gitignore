@@ -1,0 +1,7 @@
+myvenv
+db.splite3
+.vscode
+*.pyc
+.DS_Store
+.env
+local_settings.py
