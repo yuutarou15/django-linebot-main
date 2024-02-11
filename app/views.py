@@ -31,6 +31,7 @@ class CallbackView(View):
         except LineBotApiError as e:
             print(e)
             return HttpResponseServerError()
+
         return HttpResponse('OK')
 
     @method_decorator(csrf_exempt)
