@@ -28,8 +28,7 @@ class CallbackView(View):
             handler.handle(body, signature)
         except InvalidSignatureError:
             return HttpResponseBadRequest()
-        # except LineBotApiError as e:
-        except Exception as e:
+        except LineBotApiError as e:
             print(e)
             return HttpResponseServerError()
         return HttpResponse('OK')
