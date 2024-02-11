@@ -1,11 +1,8 @@
-from typing import Any
-from django.http import HttpRequest
 from django.shortcuts import render
-from django.views.generic.base import View
-from django.http.response import HttpResponse, HttpResponse as HttpResponse
 from django.http.response import HttpResponse, HttpResponseBadRequest, HttpResponseServerError
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic.base import View
 from django.conf import settings
 
 from linebot import LineBotApi, WebhookHandler
@@ -16,7 +13,6 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 # LINE Messaging APIは、CHANNEL_ACCESS_TOKENとCHANNEL_SECRETが必要
 line_bot_api = LineBotApi(settings.CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(settings.CHANNEL_SECRET)
-
 
 
 class CallbackView(View):
