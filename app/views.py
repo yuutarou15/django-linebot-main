@@ -19,19 +19,19 @@ class CallbackView(View):
     def get(self, request, *args, **kwargs):
         return HttpResponse('OK')
 
-    def post(self, request, *args, **kwargs):
-        signature = request.META['HTTP_X_LINE_SIGNATURE']
-        body = request.body.decode('utf-8')
+    # def post(self, request, *args, **kwargs):
+    #     signature = request.META['HTTP_X_LINE_SIGNATURE']
+    #     body = request.body.decode('utf-8')
 
-        try:
-            handler.handle(body, signature)
-        except InvalidSignatureError:
-            return HttpResponseBadRequest()
-        except LineBotApiError as e:
-            print(e)
-            return HttpResponseServerError()
+    #     try:
+    #         handler.handle(body, signature)
+    #     except InvalidSignatureError:
+    #         return HttpResponseBadRequest()
+    #     except LineBotApiError as e:
+    #         print(e)
+    #         return HttpResponseServerError()
 
-        return HttpResponse('OK')
+    #     return HttpResponse('OK')
 
     # @method_decorator(csrf_exempt)
     # def dispatch(self, *args, **kwargs):
