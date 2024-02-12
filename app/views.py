@@ -33,15 +33,15 @@ class CallbackView(View):
 
         return HttpResponse('OK')
 
-    @method_decorator(csrf_exempt)
-    def dispatch(self, *args, **kwargs):
-        return super(CallbackView, self).dispatch(*args, **kwargs)
+    # @method_decorator(csrf_exempt)
+    # def dispatch(self, *args, **kwargs):
+    #     return super(CallbackView, self).dispatch(*args, **kwargs)
 
-    @staticmethod
-    @handler.add(MessageEvent, message=TextMessage)
-    def message_event(event):
-        reply = event.message.text
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=reply)
-        )
+    # @staticmethod
+    # @handler.add(MessageEvent, message=TextMessage)
+    # def message_event(event):
+    #     reply = event.message.text
+    #     line_bot_api.reply_message(
+    #         event.reply_token,
+    #         TextSendMessage(text=reply)
+    #     )
