@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http.response import HttpResponse
 from django.http.response import HttpResponse, HttpResponseBadRequest, HttpResponseServerError
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
